@@ -79,6 +79,7 @@ export type TEditorProps = {
   theme?: typeof lightTheme;
   ['data-testid']?: string;
   className?: string;
+  codeDebounceInterval?: number;
 };
 
 export type TErrorProps = {

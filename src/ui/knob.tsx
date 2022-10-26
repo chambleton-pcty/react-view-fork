@@ -114,7 +114,7 @@ const BooleanKnob: React.FC<{
   );
 };
 
-const Knob: React.SFC<{
+const Knob: React.FC<{
   name: string;
   error: string | null;
   description: string;

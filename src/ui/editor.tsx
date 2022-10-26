@@ -37,7 +37,7 @@ const highlightCode = ({
       <React.Fragment>
         {tokens.map((line, i) => (
           <div key={i} {...getLineProps({line, key: i})}>
-            {line.map((token, key) => {
+            {line.filter((token) => !token.empty).map((token, key) => {
               const tokenProps = getTokenProps({token, key});
 
               if (transformToken) {
@@ -45,6 +45,7 @@ const highlightCode = ({
               }
               return <span key={key} {...tokenProps} />;
             })}
+            {"\n"}
           </div>
         ))}
       </React.Fragment>
@@ -61,6 +62,7 @@ const Editor: React.FC<TEditorProps> = ({
   theme,
   ['data-testid']: testid,
   className,
+  codeDebounceInterval,
 }) => {
   const [focused, setFocused] = React.useState(false);
   const editorTheme = {
@@ -71,7 +73,8 @@ const Editor: React.FC<TEditorProps> = ({
     },
   };
 
-  const [code, setCode] = useValueDebounce<string>(globalCode, onChange);
+  const defaultCodeDebounceInterval = 250;
+  const [code, setCode] = useValueDebounce<string>(globalCode, onChange, (codeDebounceInterval || defaultCodeDebounceInterval));
 
   return (
     <div
