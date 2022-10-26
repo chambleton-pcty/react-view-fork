@@ -1,6 +1,6 @@
 {
-  "name": "react-view",
-  "version": "2.3.8",
+  "name": "@pcty/react-view-fork",
+  "version": "0.0.2",
   "description": "",
   "keywords": [
     "react",
@@ -13,10 +13,12 @@
   "module": "dist/es/index.js",
   "typings": "dist/types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "package.json",
+    "LICENSE",
+    "README.md"
   ],
   "author": "Vojtech Miksu <vojtech@uber.com>",
-  "repository": "uber/react-view",
   "license": "MIT",
   "sideEffects": false,
   "scripts": {
