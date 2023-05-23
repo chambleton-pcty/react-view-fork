@@ -37,15 +37,18 @@ const highlightCode = ({
       <React.Fragment>
         {tokens.map((line, i) => (
           <div key={i} {...getLineProps({line, key: i})}>
-            {line.filter((token) => !token.empty).map((token, key) => {
-              const tokenProps = getTokenProps({token, key});
+            <span className="container_editor_line_number">{i + 1}</span>
+            {line
+              .filter((token) => !token.empty)
+              .map((token, key) => {
+                const tokenProps = getTokenProps({token, key});
 
-              if (transformToken) {
-                return transformToken(tokenProps);
-              }
-              return <span key={key} {...tokenProps} />;
-            })}
-            {"\n"}
+                if (transformToken) {
+                  return transformToken(tokenProps);
+                }
+                return <span key={key} {...tokenProps} />;
+              })}
+            {'\n'}
           </div>
         ))}
       </React.Fragment>
@@ -74,7 +77,11 @@ const Editor: React.FC<TEditorProps> = ({
   };
 
   const defaultCodeDebounceInterval = 250;
-  const [code, setCode] = useValueDebounce<string>(globalCode, onChange, (codeDebounceInterval || defaultCodeDebounceInterval));
+  const [code, setCode] = useValueDebounce<string>(
+    globalCode,
+    onChange,
+    codeDebounceInterval || defaultCodeDebounceInterval
+  );
 
   return (
     <div
