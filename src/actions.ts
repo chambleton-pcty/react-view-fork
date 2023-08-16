@@ -45,7 +45,7 @@ export const updateAll = (
   );
   Object.keys(propsConfig).forEach((name) => {
     propValues[name] = propsConfig[name].value;
-    if (customProps && customProps[name] && customProps[name].parse) {
+    if (customProps?.[name]?.parse) {
       // custom prop parser
       propValues[name] = customProps[name].parse(
         parsedProps[name],

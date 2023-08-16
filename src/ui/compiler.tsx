@@ -73,10 +73,9 @@ const transpile = (
   presets?: PluginItem[]
 ) => {
   try {
-    const ast = transformations.reduce(
-      (result, transformation) => transformation(result),
-      parse(code)
-    );
+    const ast = transformations.reduce((result: any, transformation) => {
+      return transformation(result);
+    }, parse(code));
     const component = generateElement(
       ast as any,
       scope,
@@ -88,7 +87,7 @@ const transpile = (
     setOutput({component});
     setError(null);
   } catch (error) {
-    setError(error.toString());
+    setError((error as any).toString());
   }
 };
 

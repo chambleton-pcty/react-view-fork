@@ -1,6 +1,6 @@
 {
   "name": "@pcty/react-view-fork",
-  "version": "0.0.3",
+  "version": "0.0.8",
   "description": "",
   "keywords": [
     "react",
@@ -59,10 +59,12 @@
     "@babel/types": "^7.13.0",
     "@miksu/prettier": "^1.18.6",
     "@miksu/react-tiny-popover": "^3.5.1",
+    "@monaco-editor/react": "^4.5.1",
     "copy-to-clipboard": "^3.3.1",
     "lodash": "^4.17.21",
-    "prism-react-renderer": "^1.3.1",
-    "react-simple-code-editor": "^0.13.1"
+    "monaco-editor": "^0.41.0",
+    "path": "npm:path-browserify",
+    "prism-react-renderer": "^1.3.1"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.13.0",

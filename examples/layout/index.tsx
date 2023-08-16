@@ -6,7 +6,6 @@ LICENSE file in the root directory of this source tree.
 */
 import * as React from 'react';
 import Highlight, {defaultProps} from 'prism-react-renderer';
-import lightTheme from '../../src/light-theme';
 
 export const Layout: React.FC<{children: React.ReactNode}> = ({children}) => (
   <div
@@ -60,7 +59,6 @@ export const Code: React.FC<{children: string}> = ({children}) => (
       {...defaultProps}
       code={children.replace(/[\r\n]+$/, '')}
       language="jsx"
-      theme={lightTheme}
     >
       {({style, tokens, getLineProps, getTokenProps}) => (
         <pre dir="ltr" style={{...style, padding: '10px 10px'}}>

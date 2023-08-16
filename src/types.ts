@@ -7,7 +7,6 @@ LICENSE file in the root directory of this source tree.
 import * as t from '@babel/types';
 import {PluginItem} from '@babel/core';
 import {PropTypes, Action} from './const';
-import lightTheme from './light-theme';
 
 export type TProvider<T = any> = {
   value: T;
@@ -76,7 +75,7 @@ export type TEditorProps = {
   language?: TEditorLanguage;
   onChange: (code: string) => void;
   small?: boolean;
-  theme?: typeof lightTheme;
+  theme?: string;
   ['data-testid']?: string;
   className?: string;
   codeDebounceInterval?: number;

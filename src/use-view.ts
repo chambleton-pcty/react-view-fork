@@ -154,7 +154,7 @@ const useView: TUseView = (config = {}) => {
           }
         } catch (e) {
           updateProps(dispatch, propName, propValue);
-          setError({where: propName, msg: e.toString()});
+          setError({where: propName, msg: (e as any).toString()});
         }
       },
     },
@@ -232,7 +232,7 @@ const useView: TUseView = (config = {}) => {
           updatePropsAndCode(dispatch, newCode, propName, propValue);
         } catch (e) {
           updateProps(dispatch, propName, propValue);
-          setError({where: propName, msg: e.toString()});
+          setError({where: propName, msg: (e as any).toString()});
         }
       },
     },
