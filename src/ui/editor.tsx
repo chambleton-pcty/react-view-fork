@@ -47,7 +47,15 @@ const Editor: React.FC<TEditorProps> = ({
         defaultLanguage="javascript"
         language={language || 'javascript'}
         theme={theme || 'vs-dark'}
-        options={{minimap: {enabled: false}, contextmenu: false}}
+        options={{
+          minimap: {enabled: false},
+          contextmenu: false,
+          quickSuggestions: {
+            other: false,
+            comments: false,
+            strings: false,
+          },
+        }}
         defaultValue={code || placeholder || ''}
         onChange={(value: any) => setCode(value)}
       />
