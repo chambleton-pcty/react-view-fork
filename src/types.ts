@@ -70,6 +70,7 @@ export type TKnobsProps = {
 
 export type TEditorProps = {
   code: string;
+  key?: string;
   transformToken?: TTransformToken;
   placeholder?: string;
   language?: TEditorLanguage;

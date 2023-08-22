@@ -11,6 +11,7 @@ import {getStyles} from '../utils';
 
 const Editor: React.FC<TEditorProps> = ({
   code: globalCode,
+  key,
   onChange,
   placeholder,
   language,
@@ -44,6 +45,7 @@ const Editor: React.FC<TEditorProps> = ({
       <MonacoEditor
         width="100%"
         height="100%"
+        key={key}
         defaultLanguage="javascript"
         language={language || 'javascript'}
         theme={theme || 'vs-dark'}
@@ -55,6 +57,7 @@ const Editor: React.FC<TEditorProps> = ({
             comments: false,
             strings: false,
           },
+          wordWrap: 'on',
         }}
         defaultValue={code || placeholder || ''}
         onChange={(value: any) => setCode(value)}
